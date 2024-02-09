@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Create Post</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="/css/imgs/logo.png" alt="logo">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/api/blog/view-posts">Home</a>
+                    </li>
+                    <li>
+                        <a href="/api/blog/create-post">Publish</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+   <main>
+        <div class="container">
+            <h1 class="create-header">Create Post</h1>
+            <form action="/api/blog/<%= editMode ? 'update-post/' + post._id : 'create-post' %>" method="POST">
+                <label class="create-label" for="title">Give your article a name</label>
+                <input class="create-input" type="text" id="title" name="title" value="<%= editMode ? post.title : '' %>" required>
+                <br>
+                <label class="create-label" for="content">Write your article body</label>
+                <textarea rows="5" class="create-input create-textarea" id="content" name="content" required><%= editMode ? post.content : '' %></textarea>
+                <br>
+                <label class="create-label" for="author">Who are you?</label>
+                <input class="create-input" type="text" id="author" name="author" value="<%= editMode ? post.author : '' %>" required>
+                <br>
+                <label class="create-label" for="image">Paste link to the image:</label>
+                <input class="create-input" type="text" name="image" id="image" value="<%= editMode ? post.image : '' %>" required>
+                <button class="create-button" type="submit">Publish</button>
+            </form>
+        </div>
+   </main>
+</body>
+</html>
