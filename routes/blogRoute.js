@@ -43,7 +43,7 @@ router.get('/edit-post/:id', async (req, res) => {
         const post = await Blog.findById(req.params.id);
         res.render('create-post', { post, editMode: true });
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).json(error);
     }
 })
 

@@ -50,9 +50,14 @@ nav ul li:not(:last-child) {
     margin-right: 40px;
 }
 
-nav ul li a {
+nav a {
     color: #FAF0E6;
-    font-weight: 600;
+    font-size: 2rem;
+    transition: .2s ease-in-out;
+}
+
+nav a:hover {
+    color: #6f6292;
 }
 
 main {
@@ -122,10 +127,15 @@ button {
 }
 
 .delete-button {
-    background: #d45f45;
+    background: #d9765f;
     font-family: 'Noto Sans';
     font-size: .75rem;
     cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.delete-button:hover {
+    background: #bc5741;
 }
 
 .change-button {
@@ -135,9 +145,12 @@ button {
     font-size: .75rem;
     font-family: 'Noto Sans';
     padding: 5px 10px;
+    transition: .2s ease-in-out;
 }
 
-
+.change-button:hover {
+    background: #6f6292;
+}
 
 /* View */
 
@@ -195,8 +208,14 @@ button {
 
 
 .create-button {
+    cursor: pointer;
     padding: 15px 30px;
     font-weight: 600;
     font-size: 1rem;
     background: #352F44;
+    transition: .2s ease-in-out;
+}
+
+.create-button:hover {
+    background: #6f6292;
 }
